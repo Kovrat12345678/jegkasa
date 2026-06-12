@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jégkása | Friss & Finom Jégkásák</title>
+    <meta name="description" content="Válassz a legjobb jégkásáink közül! Xixo, gyümölcsös és titkos ízek. Pörgesd meg a szerencsekereket napi kedvezményekért!">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="logo">
+                <span class="logo-icon">🧊</span>
+                <span class="logo-text">Jégkása</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#hero">Főoldal</a></li>
+                <li><a href="#wheel">Szerencsekerék</a></li>
+                <li><a href="#products">Kínálat</a></li>
+                <li><a href="#mixer">Mixer</a></li>
+                <li><a href="#reviews">Vélemények</a></li>
+                <li><a href="#" id="navHistoryBtn" class="nav-prizes-btn">🎁 Nyereményeim</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Menü">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-bg-particles" id="particles"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <span class="hero-badge">🔥 Nyári szezon 2026</span>
+                <h1>Zerénd <span class="gradient-text">Jégkásái</span></h1>
+                <p class="hero-desc">Friss, jeges, és ellenállhatatlanul finom. Válaszd ki a kedvencedet, vagy próbáld ki a titokzatos ízünket!</p>
+                <div class="hero-buttons">
+                    <a href="#products" class="btn btn-primary">Kínálat megtekintése</a>
+                    <a href="#wheel" class="btn btn-secondary">🎡 Napi pörgetés</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="secret-cup-wrapper" id="secretCup">
+                    <div class="secret-glow"></div>
+                    <div class="cup-assembly">
+                        <div class="cup-straw"></div>
+                        <div class="cup-lid"></div>
+                        <div class="cup-glass">
+                            <div class="cup-liquid">
+                                <div class="liquid-wave"></div>
+                                <div class="liquid-glow"></div>
+                                <span class="question-mark">?</span>
+                                <div class="liquid-particles">
+                                    <span class="l-part p1"></span>
+                                    <span class="l-part p2"></span>
+                                    <span class="l-part p3"></span>
+                                    <span class="l-part p4"></span>
+                                    <span class="l-part p5"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cup-shadow"></div>
+                    </div>
+                    <div class="secret-label">
+                        <span class="secret-title">Secret Ice Cream</span>
+                        <span class="secret-price">600 Ft</span>
+                    </div>
+                    <div class="floating-ice ice-1">❄️</div>
+                    <div class="floating-ice ice-2">🧊</div>
+                    <div class="floating-ice ice-3">✨</div>
+                    <div class="floating-ice ice-4">🔮</div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Görgess le</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Daily Deal Section -->
+    <section id="dailyDeal">
+        <div class="section-container">
+            <div class="deal-card" id="dealCard">
+                <div class="deal-glow"></div>
+                <div class="deal-content">
+                    <div class="deal-left">
+                        <span class="deal-badge" id="dealBadge">⚡ Napi Ajánlat</span>
+                        <h2 class="deal-title" id="dealTitle">Mangó Jégkása</h2>
+                        <p class="deal-desc" id="dealDesc">Ma a trópusi mangó jégkásánk akcióban! Ne hagyd ki ezt a lehetőséget!</p>
+                        <div class="deal-pricing">
+                            <span class="deal-old-price" id="dealOldPrice">350 Ft</span>
+                            <span class="deal-new-price" id="dealNewPrice">245 Ft</span>
+                            <span class="deal-discount" id="dealDiscount">-30%</span>
+                        </div>
+                        <a href="#products" class="btn btn-primary deal-btn">Megnézem! →</a>
+                    </div>
+                    <div class="deal-right">
+                        <div class="deal-timer" id="dealTimer">
+                            <span class="timer-label" id="timerLabel">Az ajánlat lejár:</span>
+                            <div class="timer-boxes">
+                                <div class="timer-box">
+                                    <span class="timer-num" id="timerHours">00</span>
+                                    <span class="timer-unit">óra</span>
+                                </div>
+                                <div class="timer-sep">:</div>
+                                <div class="timer-box">
+                                    <span class="timer-num" id="timerMinutes">00</span>
+                                    <span class="timer-unit">perc</span>
+                                </div>
+                                <div class="timer-sep">:</div>
+                                <div class="timer-box">
+                                    <span class="timer-num" id="timerSeconds">00</span>
+                                    <span class="timer-unit">mp</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="deal-slider-container">
+                            <div class="deal-slider" id="dealSlider">
+                                <!-- Slides will be rendered dynamically by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Spin Wheel Section -->
+    <section id="wheel">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-badge">🎡 Napi szerencse</span>
+                <h2>Pörgesd meg a <span class="gradient-text">szerencsekereket</span></h2>
+                <p>Naponta egyszer pörgethetsz! Nyerj kedvezményeket, ingyen jégkását és exkluzív ajánlatokat!</p>
+            </div>
+
+            <div class="wheel-container">
+                <div class="wheel-wrapper">
+                    <div class="wheel-pointer">▼</div>
+                    <canvas id="wheelCanvas" width="400" height="400"></canvas>
+                </div>
+                <div class="wheel-controls">
+                    <button class="btn btn-primary btn-spin" id="spinBtn">
+                        <span class="spin-icon">🎰</span>
+                        Pörgetés!
+                    </button>
+                    <p class="spin-info" id="spinInfo">Naponta 1 pörgetés lehetséges</p>
+                    <button class="btn btn-secondary btn-history" id="wheelHistoryBtn" style="margin-top: 12px; width: 100%;">
+                        📋 Nyereményeim
+                    </button>
+                </div>
+            </div>
+
+            <!-- Prize Modal -->
+            <div class="modal-overlay" id="prizeModal">
+                <div class="modal-content">
+                    <div class="modal-confetti" id="confetti"></div>
+                    <span class="modal-emoji" id="prizeEmoji">🎉</span>
+                    <h3 id="prizeTitle">Gratulálunk!</h3>
+                    <p id="prizeText">Nyertél valamit!</p>
+                    <div class="prize-code" id="prizeCode"></div>
+                    <button class="btn btn-primary" id="closeModal">Rendben!</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-badge">Kínálatunk</span>
+                <h2>Válaszd ki a <span class="gradient-text">kedvenced</span></h2>
+                <p>Minden jégkásánk friss alapanyagokból készül, 1 deciliter adagonként.</p>
+            </div>
+            
+            <div class="filter-bar">
+                <button class="filter-btn active" data-filter="all">Mind</button>
+                <button class="filter-btn" data-filter="xixo">Xixo</button>
+                <button class="filter-btn" data-filter="gyumolcs">Gyümölcsös</button>
+                <button class="filter-btn" data-filter="energia">Energiaital</button>
+                <button class="filter-btn" data-filter="special">Különleges</button>
+            </div>
+
+            <div class="products-grid" id="productsGrid">
+                <!-- Secret Ice Cream Card -->
+                <div class="product-card secret-card" data-category="special">
+                    <div class="card-badge badge-special">🔮 Titokzatos</div>
+                    <div class="card-image secret-image">
+                        <div class="secret-cup-mini">
+                            <div class="cup-straw-mini"></div>
+                            <div class="cup-lid-mini"></div>
+                            <div class="cup-glass-mini">
+                                <div class="cup-liquid-mini">
+                                    <span class="question-mark-mini">?</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Secret Ice Cream</h3>
+                        <p class="card-desc">Merj beleharapni az ismeretlenbe! Naponta változó titkos íz.</p>
+                        <div class="card-footer">
+                            <span class="card-price">600 Ft</span>
+                            <select class="product-size-select" data-is-secret="true" aria-label="Méret választása">
+                                <option value="1">1 dl</option>
+                                <option value="2">2 dl</option>
+                                <option value="3">3 dl</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Xixo Cherry -->
+                <div class="product-card" data-category="xixo">
+                    <div class="card-image card-image-photo" style="background: linear-gradient(135deg, #DC143C, #8B0000);">
+                        <img src="képek/images (2).jpg" alt="Xixo Cherry" class="card-photo">
+                    </div>
+                    <div class="card-content">
+                        <h3>Xixo Cherry</h3>
+                        <p class="card-desc">Cseresznye ízű Xixo jégkása, édes és frissítő.</p>
+                        <div class="card-footer">
+                            <span class="card-price">350 Ft</span>
+                            <select class="product-size-select" aria-label="Méret választása">
+                                <option value="1">1 dl</option>
+                                <option value="2">2 dl</option>
+                                <option value="3">3 dl</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Xixo Watermelon -->
+                <div class="product-card" data-category="xixo">
+                    <div class="card-image card-image-photo" style="background: linear-gradient(135deg, #FF6B6B, #2ECC71);">
+                        <img src="képek/xixo-watermelon104246--full.png" alt="Xixo Watermelon" class="card-photo">
+                    </div>
+                    <div class="card-content">
+                        <h3>Xixo Watermelon</h3>
+                        <p class="card-desc">Görögdinnye ízű Xixo jégkása, a nyár íze!</p>
+                        <div class="card-footer">
+                            <span class="card-price">350 Ft</span>
+                            <select class="product-size-select" aria-label="Méret választása">
+                                <option value="1">1 dl</option>
+                                <option value="2">2 dl</option>
+                                <option value="3">3 dl</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Xixo Tutti Frutti -->
+                <div class="product-card" data-category="xixo">
+                    <div class="card-badge badge-new">🆕 Új</div>
+                    <div class="card-image card-image-photo" style="background: linear-gradient(135deg, #6c3fc7, #e84393);">
+                        <img src="képek/xixo-tutti-fruity-min-1.png" alt="Xixo Tutti Frutti" class="card-photo">
+                    </div>
+                    <div class="card-content">
+                        <h3>Xixo Tutti Frutti</h3>
+                        <p class="card-desc">Tutti Frutti ízű Xixo jégkása, színes és gyümölcsös!</p>
+                        <div class="card-footer">
+                            <span class="card-price">350 Ft</span>
+                            <select class="product-size-select" aria-label="Méret választása">
+                                <option value="1">1 dl</option>
+                                <option value="2">2 dl</option>
+                                <option value="3">3 dl</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tea Ice Cream -->
+                <div class="product-card" data-category="special">
+                    <div class="card-image card-image-photo" style="background: linear-gradient(135deg, #8B4513, #D2691E);">
+                        <img src="képek/tea.jpg" alt="Tea Jégkása" class="card-photo">
+                    </div>
+                    <div class="card-content">
+                        <h3>Tea Jégkása</h3>
+                        <p class="card-desc">Klasszikus fekete tea alapú jégkása, egy csipet citrommal.</p>
+                        <div class="card-footer">
+                            <span class="card-price">350 Ft</span>
+                            <select class="product-size-select" aria-label="Méret választása">
+                                <option value="1">1 dl</option>
+                                <option value="2">2 dl</option>
+                                <option value="3">3 dl</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mango -->
+                <div class="product-card" data-category="gyumolcs">
+                    <div class="card-badge badge-new">🆕 Új</div>
+                    <div class="card-image card-image-photo" style="background: linear-gradient(135deg, #FFB347, #FF6F00);">
+                        <img src="képek/mangós.webp" alt="Mangó Jégkása" class="card-photo">
+                    </div>
+                    <div class="card-content">
+                        <h3>Mangó Jégkása</h3>
+                        <p class="card-desc">Trópusi mangó jégkása, egzotikus és hűsítő.</p>
+                        <div class="card-footer">
+                            <span class="card-price">350 Ft</span>
+                            <select class="product-size-select" aria-label="Méret választása">
+                                <option value="1">1 dl</option>
+                                <option value="2">2 dl</option>
+                                <option value="3">3 dl</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Eper -->
+                <div class="product-card" data-category="gyumolcs">
+                    <div class="card-image card-image-photo" style="background: linear-gradient(135deg, #FF4757, #FF6B81);">
+                        <img src="képek/epres.webp" alt="Eper Jégkása" class="card-photo">
+                    </div>
+                    <div class="card-content">
+                        <h3>Eper Jégkása</h3>
+                        <p class="card-desc">Friss eper ízű jégkása, természetes gyümölcssel.</p>
+                        <div class="card-footer">
+                            <span class="card-price">350 Ft</span>
+                            <select class="product-size-select" aria-label="Méret választása">
+                                <option value="1">1 dl</option>
+                                <option value="2">2 dl</option>
+                                <option value="3">3 dl</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Citrom -->
+                <div class="product-card" data-category="gyumolcs">
+                    <div class="card-image card-image-photo" style="background: linear-gradient(135deg, #FFF44F, #FFEB3B);">
+                        <img src="képek/citromos..jpg" alt="Citrom Jégkása" class="card-photo">
+                    </div>
+                    <div class="card-content">
+                        <h3>Citrom Jégkása</h3>
+                        <p class="card-desc">Savanykás citromos jégkása, igazi felfrissülés.</p>
+                        <div class="card-footer">
+                            <span class="card-price">350 Ft</span>
+                            <select class="product-size-select" aria-label="Méret választása">
+                                <option value="1">1 dl</option>
+                                <option value="2">2 dl</option>
+                                <option value="3">3 dl</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kékáfonya -->
+                <div class="product-card" data-category="gyumolcs">
+                    <div class="card-image card-image-photo" style="background: linear-gradient(135deg, #4834D4, #6C5CE7);">
+                        <img src="képek/áfonyás (1).jpg" alt="Áfonya Jégkása" class="card-photo">
+                    </div>
+                    <div class="card-content">
+                        <h3>Áfonya Jégkása</h3>
+                        <p class="card-desc">Kékáfonya ízű jégkása, intenzív és édes.</p>
+                        <div class="card-footer">
+                            <span class="card-price">350 Ft</span>
+                            <select class="product-size-select" aria-label="Méret választása">
+                                <option value="1">1 dl</option>
+                                <option value="2">2 dl</option>
+                                <option value="3">3 dl</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kávé -->
+                <div class="product-card" data-category="special">
+                    <div class="card-image card-image-photo" style="background: linear-gradient(135deg, #3e2723, #6d4c41);">
+                        <img src="képek/kávés.jpg" alt="Kávés Jégkása" class="card-photo">
+                    </div>
+                    <div class="card-content">
+                        <h3>Kávés Jégkása</h3>
+                        <p class="card-desc">Erős kávé ízű jégkása, koffeinnel feltöltve. Reggeli energia!</p>
+                        <div class="card-footer">
+                            <span class="card-price">350 Ft</span>
+                            <select class="product-size-select" aria-label="Méret választása">
+                                <option value="1">1 dl</option>
+                                <option value="2">2 dl</option>
+                                <option value="3">3 dl</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hell -->
+                <div class="product-card" data-category="energia">
+                    <div class="card-badge badge-hot">🔥 Energia</div>
+                    <div class="card-image card-image-photo" style="background: linear-gradient(135deg, #1a1a1a, #2d2d2d);">
+                        <img src="képek/áfonyás (1).png" alt="Hell Jégkása" class="card-photo">
+                    </div>
+                    <div class="card-content">
+                        <h3>Hell Jégkása</h3>
+                        <p class="card-desc">Hell energiaital ízű jégkása. Erős, frissítő, és energikus!</p>
+                        <div class="card-footer">
+                            <span class="card-price">350 Ft</span>
+                            <select class="product-size-select" aria-label="Méret választása">
+                                <option value="1">1 dl</option>
+                                <option value="2">2 dl</option>
+                                <option value="3">3 dl</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Eperita -->
+                <div class="product-card" data-category="special">
+                    <div class="card-badge badge-special">🍹 Különleges</div>
+                    <div class="card-image card-image-photo" style="background: linear-gradient(135deg, #ff4757, #ff6b81);">
+                        <img src="képek/eperita.jpeg" alt="Eperita Jégkása" class="card-photo">
+                    </div>
+                    <div class="card-content">
+                        <h3>Eperita Jégkása</h3>
+                        <p class="card-desc">Prémium eper koktél ihlette jégkása. Friss és édes eperíz.</p>
+                        <div class="card-footer">
+                            <span class="card-price">350 Ft</span>
+                            <select class="product-size-select" aria-label="Méret választása">
+                                <option value="1">1 dl</option>
+                                <option value="2">2 dl</option>
+                                <option value="3">3 dl</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Six Seven -->
+                <div class="product-card" data-category="special">
+                    <div class="card-badge badge-new">🆕 Új</div>
+                    <div class="card-image card-image-photo" style="background: linear-gradient(135deg, #1e272e, #485460);">
+                        <img src="képek/six seven.png" alt="Six Seven Jégkása" class="card-photo">
+                    </div>
+                    <div class="card-content">
+                        <h3>Six Seven Jégkása</h3>
+                        <p class="card-desc">Titokzatos Six Seven ízvilágú jégkása, jéghideg felfrissülés.</p>
+                        <div class="card-footer">
+                            <span class="card-price">350 Ft</span>
+                            <select class="product-size-select" aria-label="Méret választása">
+                                <option value="1">1 dl</option>
+                                <option value="2">2 dl</option>
+                                <option value="3">3 dl</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Slushie Mixer Section -->
+    <section id="mixer">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-badge">🧪 Jégkása Labor</span>
+                <h2>Keverd ki a saját <span class="gradient-text">jégkásádat</span></h2>
+                <p>Válassz ki akár 3 különböző réteget, méretet és tegyél rá különleges feltéteket!</p>
+            </div>
+
+            <div class="mixer-container">
+                <!-- Visual Cup Preview (Left) -->
+                <div class="mixer-visual">
+                    <div class="mixer-cup-wrapper">
+                        <div class="mixer-glow"></div>
+                        <div class="m-cup-assembly">
+                            <div class="m-cup-straw"></div>
+                            <div class="m-cup-toppings">
+                                <span class="m-topping m-top-whip">🥛</span>
+                                <span class="m-topping m-top-gummy">🪱</span>
+                                <span class="m-topping m-top-cherry">🍒</span>
+                                <span class="m-topping m-top-sprinkles">✨</span>
+                            </div>
+                            <div class="m-cup-lid"></div>
+                            <div class="m-cup-glass">
+                                <div class="m-cup-liquid-container">
+                                    <div class="m-cup-layer layer-3" id="mLay3"></div>
+                                    <div class="m-cup-layer layer-2" id="mLay2"></div>
+                                    <div class="m-cup-layer layer-1" id="mLay1"></div>
+                                </div>
+                            </div>
+                            <div class="m-cup-shadow"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controls Panel (Right) -->
+                <div class="mixer-controls">
+                    <div class="control-group">
+                        <h3>1. Válaszd ki a rétegeket</h3>
+                        <div class="layer-selectors">
+                            <div class="layer-select-box">
+                                <label for="laySelect3">Felső réteg (3.):</label>
+                                <select id="laySelect3" class="mixer-select">
+                                    <option value="none">-- Üres --</option>
+                                    <option value="cherry" data-color="#DC143C">Xixo Cherry</option>
+                                    <option value="watermelon" data-color="#FF6B6B">Xixo Watermelon</option>
+                                    <option value="tutti" data-color="#6c3fc7">Xixo Tutti Frutti</option>
+                                    <option value="tea" data-color="#8B4513">Tea Jégkása</option>
+                                    <option value="mango" data-color="#FFB347">Mangó Jégkása</option>
+                                    <option value="eper" data-color="#FF4757">Eper Jégkása</option>
+                                    <option value="citrom" data-color="#FFF44F">Citrom Jégkása</option>
+                                    <option value="afonya" data-color="#4834D4">Áfonya Jégkása</option>
+                                    <option value="kave" data-color="#3e2723">Kávés Jégkása</option>
+                                    <option value="hell" data-color="#1a1a1a">Hell Jégkása</option>
+                                </select>
+                            </div>
+                            <div class="layer-select-box">
+                                <label for="laySelect2">Középső réteg (2.):</label>
+                                <select id="laySelect2" class="mixer-select">
+                                    <option value="none">-- Üres --</option>
+                                    <option value="cherry" data-color="#DC143C">Xixo Cherry</option>
+                                    <option value="watermelon" data-color="#FF6B6B" selected>Xixo Watermelon</option>
+                                    <option value="tutti" data-color="#6c3fc7">Xixo Tutti Frutti</option>
+                                    <option value="tea" data-color="#8B4513">Tea Jégkása</option>
+                                    <option value="mango" data-color="#FFB347">Mangó Jégkása</option>
+                                    <option value="eper" data-color="#FF4757">Eper Jégkása</option>
+                                    <option value="citrom" data-color="#FFF44F">Citrom Jégkása</option>
+                                    <option value="afonya" data-color="#4834D4">Áfonya Jégkása</option>
+                                    <option value="kave" data-color="#3e2723">Kávés Jégkása</option>
+                                    <option value="hell" data-color="#1a1a1a">Hell Jégkása</option>
+                                </select>
+                            </div>
+                            <div class="layer-select-box">
+                                <label for="laySelect1">Alsó réteg (1.):</label>
+                                <select id="laySelect1" class="mixer-select">
+                                    <option value="none">-- Üres --</option>
+                                    <option value="cherry" data-color="#DC143C" selected>Xixo Cherry</option>
+                                    <option value="watermelon" data-color="#FF6B6B">Xixo Watermelon</option>
+                                    <option value="tutti" data-color="#6c3fc7">Xixo Tutti Frutti</option>
+                                    <option value="tea" data-color="#8B4513">Tea Jégkása</option>
+                                    <option value="mango" data-color="#FFB347">Mangó Jégkása</option>
+                                    <option value="eper" data-color="#FF4757">Eper Jégkása</option>
+                                    <option value="citrom" data-color="#FFF44F">Citrom Jégkása</option>
+                                    <option value="afonya" data-color="#4834D4">Áfonya Jégkása</option>
+                                    <option value="kave" data-color="#3e2723">Kávés Jégkása</option>
+                                    <option value="hell" data-color="#1a1a1a">Hell Jégkása</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <h3>2. Válassz méretet</h3>
+                        <div class="mixer-sizes">
+                            <label class="size-label">
+                                <input type="radio" name="mixerSize" value="100" checked>
+                                <div class="size-card">
+                                    <span class="size-icon">🥤</span>
+                                    <span class="size-name">Kicsi (1 dl)</span>
+                                    <span class="size-price">350 Ft</span>
+                                </div>
+                            </label>
+                            <label class="size-label">
+                                <input type="radio" name="mixerSize" value="200">
+                                <div class="size-card">
+                                    <span class="size-icon">🥤</span>
+                                    <span class="size-name">Közepes (2 dl)</span>
+                                    <span class="size-price">700 Ft</span>
+                                </div>
+                            </label>
+                            <label class="size-label">
+                                <input type="radio" name="mixerSize" value="300">
+                                <div class="size-card">
+                                    <span class="size-icon">🥤</span>
+                                    <span class="size-name">Nagy (3 dl)</span>
+                                    <span class="size-price">1000 Ft</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <h3>3. Kérsz rá feltétet?</h3>
+                        <div class="mixer-toppings">
+                            <label class="topping-checkbox">
+                                <input type="checkbox" id="topWhip" value="200">
+                                <span class="checkbox-custom"></span>
+                                <span class="topping-text">🍦 Tejszínhab (+200 Ft)</span>
+                            </label>
+                            <label class="topping-checkbox">
+                                <input type="checkbox" id="topGummy" value="180">
+                                <span class="checkbox-custom"></span>
+                                <span class="topping-text">🪱 Gumicukor (+180 Ft)</span>
+                            </label>
+                            <label class="topping-checkbox">
+                                <input type="checkbox" id="topCherry" value="50">
+                                <span class="checkbox-custom"></span>
+                                <span class="topping-text">🍒 Koktélcseresznye (+50 Ft)</span>
+                            </label>
+                            <label class="topping-checkbox">
+                                <input type="checkbox" id="topSprinkles" value="50">
+                                <span class="checkbox-custom"></span>
+                                <span class="topping-text">✨ Színes cukorka (+50 Ft)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Dynamic Price Display -->
+                    <div class="mixer-price-summary">
+                        <div class="price-title">Keveréked ára:</div>
+                        <div class="price-value" id="mixerTotal">500 Ft</div>
+                        <button class="btn btn-primary" id="saveMixBtn" style="width: 100%; justify-content: center; font-size: 1.1rem; padding: 16px;">
+                            🧪 Recept mentése
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recipe Code Modal -->
+        <div class="modal-overlay" id="recipeModal">
+            <div class="modal-content">
+                <span class="modal-emoji" style="font-size: 3.5rem; display: block; margin-bottom: 12px;">🧪</span>
+                <h3 style="font-size: 1.8rem; font-weight: 800; margin-bottom: 8px; background: var(--gradient-main); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Recept Elmentve!</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 16px;">Mutasd meg ezt a kódot az eladónak a jégkása elkészítéséhez!</p>
+                <div class="prize-code" id="recipeCode" style="font-size: 1.1rem; padding: 14px; letter-spacing: 2px;"></div>
+                <div class="recipe-details" id="recipeDetails" style="text-align: left; background: rgba(255,255,255,0.02); border: 1px solid var(--border); padding: 16px; border-radius: var(--radius-sm); margin-bottom: 20px; font-size: 0.9rem;">
+                </div>
+                <button class="btn btn-primary" id="closeRecipeModal" style="width: 100%;">Rendben!</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-badge">🌟 Vendégkönyv</span>
+                <h2>Mit mondanak a <span class="gradient-text">vendégeink</span>?</h2>
+                <p>Vélemények olyan jégkásaimádóktól, akik már kipróbálták a frissítőinket!</p>
+            </div>
+
+            <!-- Review Cards Slider -->
+            <div class="reviews-slider-wrapper">
+                <div class="reviews-slider" id="reviewsSlider">
+                    <!-- Dynamic review items go here -->
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-arrow prev-arrow" id="prevReview" aria-label="Előző">❮</button>
+                    <button class="slider-arrow next-arrow" id="nextReview" aria-label="Következő">❯</button>
+                </div>
+            </div>
+
+            <!-- Add Review Form -->
+            <div class="add-review-container">
+                <div class="add-review-card">
+                    <h3>Írd meg a véleményed!</h3>
+                    <p>Mondd el nekünk és a többieknek, mennyire ízlett a jégkása!</p>
+                    <form id="reviewForm" onsubmit="event.preventDefault();">
+                        <div class="form-group">
+                            <label for="reviewName">Néved:</label>
+                            <input type="text" id="reviewName" placeholder="Pl. Zeréndi Péter" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Értékelésed:</label>
+                            <div class="star-rating-input" id="starRatingInput">
+                                <span class="star-input" data-rating="1">★</span>
+                                <span class="star-input" data-rating="2">★</span>
+                                <span class="star-input" data-rating="3">★</span>
+                                <span class="star-input" data-rating="4">★</span>
+                                <span class="star-input" data-rating="5">★</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="reviewText">Vélemény:</label>
+                            <textarea id="reviewText" rows="3" placeholder="Írd le a tapasztalataidat..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                            🌟 Vélemény elküldése
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <span class="logo-icon">🧊</span>
+                    <span class="logo-text">Jégkása</span>
+                    <p>A legfinomabb jégkásák egy helyen.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Navigáció</h4>
+                    <a href="#hero">Főoldal</a>
+                    <a href="#wheel">Szerencsekerék</a>
+                    <a href="#products">Kínálat</a>
+                    <a href="#mixer">Mixer</a>
+                    <a href="#reviews">Vélemények</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Elérhetőség</h4>
+                    <a href="#">📍 Budapest</a>
+                    <a href="#">📞 +36 30 123 4567</a>
+                    <a href="#">📧 info@jegkasa.hu</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Jégkása. Minden jog fenntartva.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- History Verification Modal -->
+    <div class="modal-overlay" id="historyModal">
+        <div class="modal-content history-modal-content">
+            <span class="modal-emoji" style="font-size: 3.5rem; display: block; margin-bottom: 12px;">🎁</span>
+            <h3 style="font-size: 1.8rem; font-weight: 800; margin-bottom: 8px; background: var(--gradient-main); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Nyereményeim</h3>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 16px;">Mutasd meg ezt a listát az eladónak a beváltáshoz!</p>
+            <div class="history-list" id="historyList">
+                <p class="no-prizes">Még nincsenek nyereményeid. Pörgesd meg a kereket!</p>
+            </div>
+            <button class="btn btn-primary" id="closeHistoryModal" style="margin-top: 20px; width: 100%;">Bezárás</button>
+        </div>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div class="modal-overlay" id="lightboxModal">
+        <div class="lightbox-content">
+            <span class="lightbox-close" id="closeLightbox">&times;</span>
+            <img src="" alt="" id="lightboxImg">
+            <h3 id="lightboxTitle"></h3>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
