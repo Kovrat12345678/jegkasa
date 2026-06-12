@@ -479,8 +479,9 @@ function initDailyDealSlider() {
         const slide = document.createElement('div');
         slide.className = 'deal-slide';
         if (slushie.image === 'secret') {
+            slide.style.background = 'linear-gradient(135deg, #12121a 0%, #0a0a0f 100%)';
             slide.innerHTML = `
-                <div class="secret-cup-mini" style="transform: scale(1.1); margin: 0 auto;">
+                <div class="secret-cup-mini" style="transform: scale(1.3); z-index: 2;">
                     <div class="cup-straw-mini"></div>
                     <div class="cup-lid-mini"></div>
                     <div class="cup-glass-mini">

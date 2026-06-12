@@ -690,6 +690,7 @@ img {
     border-radius: var(--radius-xl);
     border: 1px solid rgba(255, 107, 107, 0.2);
     overflow: hidden;
+    height: 420px;
     transition: var(--transition);
 }
 
@@ -709,6 +710,7 @@ img {
     border-radius: 50%;
     pointer-events: none;
     animation: dealGlowPulse 4s ease-in-out infinite;
+    z-index: 3;
 }
 
 @keyframes dealGlowPulse {
@@ -716,14 +718,70 @@ img {
     50% { opacity: 1; transform: scale(1.1); }
 }
 
-.deal-content {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 32px;
-    padding: 48px;
+.deal-slider-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+    border-radius: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.deal-slider {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.deal-slide {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    display: flex;
     align-items: center;
+    justify-content: flex-end;
+    padding-right: 10%;
     position: relative;
+}
+
+.deal-slide-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.deal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(10, 10, 15, 0.98) 0%, rgba(10, 10, 15, 0.75) 50%, transparent 90%);
     z-index: 2;
+    pointer-events: none;
+}
+
+.deal-content {
+    position: relative;
+    z-index: 4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 48px;
+    pointer-events: none;
 }
 
 .deal-badge {
@@ -791,6 +849,7 @@ img {
 .deal-btn {
     background: linear-gradient(135deg, #ff6b6b, #ee5a24) !important;
     box-shadow: 0 4px 20px rgba(255, 107, 107, 0.4) !important;
+    pointer-events: auto;
 }
 
 .deal-btn:hover {
@@ -800,12 +859,19 @@ img {
 .deal-right {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 24px;
+    align-items: flex-end;
+    pointer-events: auto;
 }
 
 .deal-timer {
+    background: rgba(18, 18, 26, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 16px 24px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
     text-align: center;
+    box-shadow: var(--shadow-md);
 }
 
 .timer-label {
@@ -872,46 +938,11 @@ img {
     box-shadow: 0 20px 60px rgba(108, 92, 231, 0.15), 0 0 40px rgba(253, 121, 168, 0.1);
 }
 
-.deal-slider-container {
-    width: 320px;
-    height: 220px;
-    overflow: hidden;
-    position: relative;
-    border-radius: var(--radius-md);
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid var(--border);
-    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.02);
+.deal-left {
     display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.deal-slider {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.deal-slide {
-    flex: 0 0 100%;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
-
-.deal-slide-image {
-    width: 280px;
-    height: 180px;
-    object-fit: cover;
-    border-radius: var(--radius-md);
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    box-shadow: var(--shadow-md);
-    animation: float 4s ease-in-out infinite;
-    cursor: pointer;
+    flex-direction: column;
+    align-items: flex-start;
+    pointer-events: auto;
 }
 
 /* --- Section Styles --- */
@@ -1558,9 +1589,31 @@ img {
         display: none;
     }
 
+    .deal-card {
+        height: auto;
+        min-height: 520px;
+    }
+
+    .deal-overlay {
+        background: linear-gradient(180deg, rgba(10, 10, 15, 0.96) 0%, rgba(10, 10, 15, 0.75) 60%, rgba(10, 10, 15, 0.4) 100%);
+    }
+
     .deal-content {
-        grid-template-columns: 1fr;
+        flex-direction: column;
+        justify-content: center;
+        gap: 32px;
+        padding: 36px 24px;
+    }
+
+    .deal-left {
+        width: 100%;
+        align-items: center;
         text-align: center;
+    }
+
+    .deal-right {
+        width: 100%;
+        align-items: center;
     }
 
     .deal-desc {
@@ -1573,6 +1626,11 @@ img {
 
     .deal-btn {
         margin: 0 auto;
+    }
+
+    .deal-slide {
+        justify-content: center;
+        padding-right: 0;
     }
 }
 
